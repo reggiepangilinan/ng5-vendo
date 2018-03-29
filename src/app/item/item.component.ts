@@ -45,7 +45,7 @@ export enum ItemType {
 export class Item {
   imgsrc: string = "";
   name : string  = "";
-  price : number = 1.43;
+  price : number = 13.94;
 
   setImageSrc(itemType: ItemType): void {
     switch (itemType) {
