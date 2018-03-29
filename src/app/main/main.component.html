@@ -1,0 +1,42 @@
+<div class="main">
+
+  <div class="items">
+    <!-- ITEMS DISPLAY -->
+    <div class="item-list">
+      <div class="item-list-title">
+        Total Credit ($ {{totalCash}})
+      </div>
+      <div class="item-list-wrapper">
+        <app-item *ngFor="let item of this.itemsForDisplay" [item]="item" (selectedItem)="selectedItem($event)">
+        </app-item>
+      </div>
+    </div>
+    <!-- ITEMS DISPENSED -->
+    <div class="item-dispenser">
+        <div class="item-dispensed-title">
+            Dispensed Items  ( Click item to collect )
+          </div>
+
+          <div class="items-dispensed-wrapper" *ngIf="this.itemsDispensed.length > 0"> 
+              <app-item *ngFor="let item of this.itemsDispensed" [item]="item" (selectedItem)="selectedItem($event)">
+              </app-item>
+          </div>
+    </div>
+
+  </div>
+
+  <div class="payments">
+    <div class="payment-options">
+      <div class="payment-options-toggle">
+          <button class="{{ isPaymentCash ? 'active'  : '' }}" (click)="togglePaymentMode(true)">Cash</button>
+          <button class="{{ !isPaymentCash ? 'active' : '' }}" (click)="togglePaymentMode(false)">Credit</button>
+      </div>
+
+      <div class="payment-options-content">
+          <app-cash *ngIf="isPaymentCash"></app-cash>
+          <app-credit *ngIf="!isPaymentCash"></app-credit>
+      </div>
+
+    </div>
+  </div>
+</div>

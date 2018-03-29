@@ -1,0 +1,10 @@
+<div class="wrapper" (click)="itemClicked(item)"> 
+
+  <div *ngIf="item.itemMode != 2"
+  class="status {{
+      item.qty <= 0? ' outofstock ' : ' available ' 
+  }}">Available ({{item.qty}})</div>
+  <img src="{{item.imgsrc}}"/>
+  <div class="item-name">{{item.name}}</div>
+  
+</div>

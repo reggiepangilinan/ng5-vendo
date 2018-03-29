@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'One Price Vendo, Everything @ $1.43';
 }

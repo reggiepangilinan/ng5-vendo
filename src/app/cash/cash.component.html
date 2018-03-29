@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class=message>
+    Please select the amount to insert
+  </div>
+
+  <button (click)="insertCash(5)">$ 5</button>
+  <button (click)="insertCash(10)">$ 10</button>
+  <button (click)="insertCash(20)">$ 20</button>
+  <button (click)="insertCash(50)">$ 50</button>
+
+  <div class="change-wrapper">
+    <div class="title">
+      Get change here
+    </div>
+    <div class="amount">
+        $ {{totalChange}}
+    </div>
+    <button (click)="clearChange()">Clear change</button>
+  </div>
+</div>

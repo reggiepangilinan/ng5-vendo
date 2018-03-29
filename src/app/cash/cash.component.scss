@@ -1,0 +1,67 @@
+@import "../../variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-items: center;
+
+  .message {
+    margin-top: 20px;
+    width: 80%;
+    height: 62px;
+    background-color: $off-white;
+    text-align: center;
+    color: $lipstick;
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  button {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $white-two;
+    width: 80%;
+    height: 39px;
+    background-color: #498fe1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+  }
+
+  .change-wrapper {
+    margin-top: 110px;
+    width: 80%;
+    height: 200px;
+    background-color: $off-white;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+
+    .title {
+      width: 100%;
+      height: 41px;
+      background-color: $lipstick;
+      color: $white-two;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 10px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .amount {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: $lipstick;
+    }
+  }
+}
