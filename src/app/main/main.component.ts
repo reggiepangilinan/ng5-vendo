@@ -11,7 +11,7 @@ import { SnotifyService } from "ng-snotify";
 export class MainComponent implements OnInit {
   itemsForDisplay: Item[] = [];
   itemsDispensed: Item[] = [];
-  isPaymentCash: boolean = false;
+  isPaymentCash: boolean = true;
   totalCash: number = 0;
   totalChange: number = 0;
   cardPurchase : number = 0;

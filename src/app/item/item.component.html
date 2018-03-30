@@ -1,6 +1,6 @@
 <div class="wrapper" (click)="itemClicked(item)"> 
 
-  <div *ngIf="item.itemMode != 2"
+  <div *ngIf="item.itemMode != 1"
   class="status {{
       item.qty <= 0? ' outofstock ' : ' available ' 
   }}">Available ({{item.qty}})</div>

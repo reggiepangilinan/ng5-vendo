@@ -23,8 +23,7 @@ export class ItemComponent implements OnInit {
 
 export enum ItemMode {
   Display = 0,
-  Restock = 1,
-  Dispense = 2
+  Dispense = 1
 }
 
 

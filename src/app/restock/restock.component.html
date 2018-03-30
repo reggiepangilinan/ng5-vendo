@@ -1,3 +1,20 @@
-<p>
-  restock works!
-</p>
+<div class="wrapper">
+  <div class="title">
+    Manage Item Inventory. Click (+) to Add Item, Otherwise (-)
+  </div>
+  <div class="list">
+    <div class="item" *ngFor="let item of this.itemsForDisplay">
+
+      <div class="content">
+        <app-item [item]="item"></app-item>
+        <div class="name">{{item.name}}</div>
+        <div class="qty {{item.qty > 0 ? 'available' : 'outofstock'}}">{{item.qty}} available</div>
+      </div>
+
+      <div class="actions">
+        <button class="dec" (click)="decrement(item)"> - </button>
+        <button class="inc" (click)="increment(item)"> + </button>
+      </div>
+    </div>
+  </div>
+</div>

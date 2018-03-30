@@ -37,7 +37,7 @@ export class DataService {
   change = this.changeInMachine.asObservable();
 
   //PaymentCash
-  private isPaymentCash = new BehaviorSubject<boolean>(false);
+  private isPaymentCash = new BehaviorSubject<boolean>(true);
   paymentcash = this.isPaymentCash.asObservable();
 
   //Credit Card Name
