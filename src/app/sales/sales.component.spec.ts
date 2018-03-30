@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SalesComponent } from './sales.component';
+
+import { DataService } from '../data.service';
+import { SnotifyService } from 'ng-snotify';
+
+let snotifyServiceStub: Partial<SnotifyService>;
+snotifyServiceStub = {};
 
 describe('SalesComponent', () => {
   let component: SalesComponent;
@@ -8,7 +14,13 @@ describe('SalesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SalesComponent ]
+      declarations: [ SalesComponent ],
+      providers: 
+      [
+        DataService,
+        { provide: SnotifyService, useValue: snotifyServiceStub }
+      ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

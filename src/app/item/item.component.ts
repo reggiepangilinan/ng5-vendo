@@ -10,7 +10,9 @@ export class ItemComponent implements OnInit {
 
   @Input() item: Item;
   @Output() selectedItem = new EventEmitter<Item>();
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
 

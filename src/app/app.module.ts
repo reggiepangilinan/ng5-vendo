@@ -25,11 +25,15 @@ ToastDefaults.toast.position = "rightTop";
     CreditComponent,
     SalesComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SnotifyModule,FormsModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    SnotifyModule,
+    FormsModule
+  ],
   providers: [
     DataService,
-    {
-      
+    {  
       provide: "SnotifyToastConfig",
       useValue: ToastDefaults,
     },

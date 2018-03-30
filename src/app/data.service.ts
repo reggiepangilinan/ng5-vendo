@@ -33,6 +33,10 @@ export class DataService {
   private cashInMachine = new BehaviorSubject<number>(0);
   cash = this.cashInMachine.asObservable();
 
+  getCash() {
+    return this.cashInMachine.asObservable();
+  }
+
   //Cash in Vendo Machine
   private changeInMachine = new BehaviorSubject<number>(0);
   change = this.changeInMachine.asObservable();
