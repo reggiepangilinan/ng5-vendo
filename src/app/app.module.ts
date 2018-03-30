@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { SnotifyModule, SnotifyService, ToastDefaults } from "ng-snotify";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { MainComponent } from "./main/main.component";
@@ -22,7 +23,7 @@ ToastDefaults.toast.position = "rightTop";
     CashComponent,
     CreditComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SnotifyModule],
+  imports: [BrowserModule, AppRoutingModule, SnotifyModule,FormsModule],
   providers: [
     DataService,
     {

@@ -1,3 +1,25 @@
-<p>
-  credit works!
-</p>
+<div class="wrapper">
+  <div class=message>
+    Please enter your credit card info
+  </div>
+
+  <form>
+    <label>Name</label>
+    <input type="text" #cardname name="cardname" (blur)="updateCardName(cardname.value)" [(ngModel)]="cardName"/>
+    <label>Credit Card No.</label>
+    <input type="text" #cardno name="cardno" (blur)="updateCardNumber(cardno.value)" [(ngModel)]="cardNumber"/>
+    <button (click)="clearInfo()">CLEAR INFO</button>
+  </form>
+
+  <div class="receipt-wrapper">
+    <div class="title">
+      Total Purchased
+    </div>
+    <div class="amount">
+      $ {{cardPurchase}}
+    </div>
+    <button (click)="getReceipt()">Get Receipt</button>
+  </div>
+
+
+</div>

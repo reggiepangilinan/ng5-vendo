@@ -3,8 +3,11 @@
   <div class="items">
     <!-- ITEMS DISPLAY -->
     <div class="item-list">
-      <div class="item-list-title">
+      <div class="item-list-title" *ngIf="this.isPaymentCash">
         Total Credit ($ {{totalCash}})
+      </div>
+      <div class="item-list-title" *ngIf="!this.isPaymentCash">
+        Enter valid credit card info to purchase
       </div>
       <div class="item-list-wrapper">
         <app-item *ngFor="let item of this.itemsForDisplay" [item]="item" (selectedItem)="selectedItem($event)">

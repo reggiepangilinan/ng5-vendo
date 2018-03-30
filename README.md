@@ -1,5 +1,9 @@
 # Ng5Vendo
 
+A vendo machine using angular 5
+
+Beverage Icons from [https://www.flaticon.com](https://www.flaticon.com/packs/beverages)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server
