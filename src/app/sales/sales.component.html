@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="title">
+    Inventory and Sales Summary
+  </div>
+  <div class="inventory">
+    <h2>Inventory</h2>
+    <div class="detail">Total Items in Machine :
+      <div class="value">
+        {{getInventoryCount()}}
+      </div>
+    </div>
+    <div class="detail">
+      Total Items Value in Machine :
+      <div class="value">
+        $ {{getInventoryAmount()}}
+      </div>
+    </div>
+  </div>
+
+  <div class="sales">
+    <h2>Sales</h2>
+
+    <div class="detail">Total Sales :
+      <div class="value">
+        $ {{getTotalSales()}}
+      </div>
+    </div>
+
+
+    <div class="detail">Total Sales By Cash :
+      <div class="value">
+        $ {{getTotalSalesByCash()}}
+      </div>
+    </div>
+
+    <div class="detail">Total Sales By Card :
+      <div class="value">
+        $ {{getTotalSalesByCard()}}
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

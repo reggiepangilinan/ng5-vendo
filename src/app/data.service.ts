@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { Item, ItemType, ItemMode } from "./item/item.component";
+import { Sale, SalesType } from "./sales/sales.component";
 
 @Injectable()
 export class DataService {
@@ -52,7 +53,16 @@ export class DataService {
   private creditCardPurchaseAmount = new BehaviorSubject<number>(0);
   cardPurchase = this.creditCardPurchaseAmount.asObservable();
 
+  //Sales
+  private itemSales = new BehaviorSubject<Sale[]>([]);
+  sales = this.itemSales.asObservable();
+
+
   constructor() {}
+
+  updateSales(newSales: Sale[]) {
+    this.itemSales.next(newSales);
+  }
 
   updateItemsForDisplay(newItemsForDisplay: Item[]) {
     this.itemsForDisplay.next(newItemsForDisplay);
@@ -85,6 +95,7 @@ export class DataService {
   updateCardPurchaseAmount(newValue : number) {
     this.creditCardPurchaseAmount.next(newValue);
   }
+
 
 }
 

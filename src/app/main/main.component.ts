@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Item, ItemType, ItemMode } from "../item/item.component";
 import { DataService, guid, roundOffNumber } from "../data.service";
 import { SnotifyService } from "ng-snotify";
+import { Sale, SalesType } from "../sales/sales.component";
 
 @Component({
   selector: "app-main",
@@ -9,6 +10,7 @@ import { SnotifyService } from "ng-snotify";
   styleUrls: ["./main.component.scss"]
 })
 export class MainComponent implements OnInit {
+  sales : Sale[] = [];
   itemsForDisplay: Item[] = [];
   itemsDispensed: Item[] = [];
   isPaymentCash: boolean = true;
@@ -27,6 +29,7 @@ export class MainComponent implements OnInit {
 
 
   ngOnInit() {
+    this._data.sales.subscribe(res => (this.sales = res));
     this._data.fordisplay.subscribe(res => (this.itemsForDisplay = res));
     this._data.dispensed.subscribe(res => (this.itemsDispensed = res));
     this._data.cash.subscribe(res => (this.totalCash = res));
@@ -101,11 +104,13 @@ export class MainComponent implements OnInit {
       x => x.itemType == item.itemType
     );
     selectedItemInList.qty--;
-    this.itemsDispensed.push(
-      new Item(item.itemType, ItemMode.Dispense, 0, guid())
-    );
+    const itemsales = new Item(item.itemType, ItemMode.Dispense, 1, guid())
+    this.itemsDispensed.push(itemsales);
     this._data.updateItemsForDisplay(this.itemsForDisplay);
     this._data.updateItemsDispensed(this.itemsDispensed);
+
+    //UPDATE SALES
+    this.sales.push(new Sale(itemsales,isPaymentCash? SalesType.Cash : SalesType.Card));
 
     //CASH PAYMENT
     if (isPaymentCash) {

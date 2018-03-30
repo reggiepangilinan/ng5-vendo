@@ -11,6 +11,7 @@ import { ItemComponent } from "./item/item.component";
 import { CashComponent } from "./cash/cash.component";
 import { CreditComponent } from "./credit/credit.component";
 import { DataService } from "./data.service";
+import { SalesComponent } from './sales/sales.component';
 
 ToastDefaults.toast.position = "rightTop";
 
@@ -21,7 +22,8 @@ ToastDefaults.toast.position = "rightTop";
     RestockComponent,
     ItemComponent,
     CashComponent,
-    CreditComponent
+    CreditComponent,
+    SalesComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SnotifyModule,FormsModule],
   providers: [

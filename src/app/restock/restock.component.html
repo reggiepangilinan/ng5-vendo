@@ -2,6 +2,22 @@
   <div class="title">
     Manage Item Inventory. Click (+) to Add Item, Otherwise (-)
   </div>
+
+  <div class="inventory">
+    <div class="detail">Total Items in Machine :
+      <div class="value">
+        {{getInventoryCount()}}
+      </div>
+    </div>
+    <div class="detail">
+      Total Items Value in Machine : 
+      <div class="value">
+          $ {{getInventoryAmount()}}
+        </div>
+    </div>
+  </div>
+
+
   <div class="list">
     <div class="item" *ngFor="let item of this.itemsForDisplay">
 
