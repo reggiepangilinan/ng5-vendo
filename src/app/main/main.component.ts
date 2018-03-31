@@ -32,7 +32,7 @@ export class MainComponent implements OnInit {
     this._data.sales.subscribe(res => (this.sales = res));
     this._data.fordisplay.subscribe(res => (this.itemsForDisplay = res));
     this._data.dispensed.subscribe(res => (this.itemsDispensed = res));
-    this._data.getCash().subscribe(res => (this.totalCash = res));
+    this._data.cash.subscribe(res => (this.totalCash = res));
     this._data.change.subscribe(res => (this.totalChange = res));
     this._data.cardName.subscribe(res=> this.cardName = res);
     this._data.cardNumber.subscribe(res=> this.cardNumber = res);

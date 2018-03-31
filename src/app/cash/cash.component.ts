@@ -15,7 +15,7 @@ export class CashComponent implements OnInit {
   constructor(private _data : DataService, private _snotifyService: SnotifyService) { }
 
   ngOnInit() {
-    this._data.getCash().subscribe(res=> this.totalCash = res);
+    this._data.cash.subscribe(res=> this.totalCash = res);
     this._data.change.subscribe(res=> this.totalChange = res);
   }
 
